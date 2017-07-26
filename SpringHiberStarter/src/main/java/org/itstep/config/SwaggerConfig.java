@@ -1,6 +1,10 @@
 package org.itstep.config;
 
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.logging.Logger;
+
+import org.springframework.boot.logging.Slf4JLoggingSystem;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -16,7 +20,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
-
+Logger log = Logger.getLogger(SwaggerConfig.class.getName());
     @Bean
     public Docket api() {
         log.info("Swagger config");
