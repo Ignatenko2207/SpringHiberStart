@@ -15,9 +15,9 @@ import lombok.Data;
 public class Good {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "GOOD_ID", unique = true, nullable = false)
-	private String goodID;
+	private Long goodID;
 	
 	@Column(name = "GROUPS", nullable = false)
 	private String groups;

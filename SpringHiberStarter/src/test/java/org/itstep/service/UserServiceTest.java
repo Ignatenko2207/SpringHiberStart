@@ -27,6 +27,7 @@ public class UserServiceTest {
 		userService.createAndUpdateUser(user);
 		User userDB = userService.getUser(user.getEmail(), user.getPassword());
 		assertNotNull(userDB);
+		assertEquals(userDB.getEmail(), "ignatenko2207@gmail.com");
 		userService.deleteUser(userDB.getUserId());
 	}
 
