@@ -34,10 +34,10 @@ public class DefaultConfig extends WebMvcConfigurerAdapter {
     @Bean
     public EmbeddedServletContainerFactory servletContainer() {
         TomcatEmbeddedServletContainerFactory factory = new TomcatEmbeddedServletContainerFactory();
-        factory.setContextPath("/stock");
+        factory.setContextPath("/SpringHiberStarter");
 //        AbstractConfigurableEmbeddedServletContainer serverSettings;
 		factory.setPort(8080);
-        factory.setContextPath("/stock");
+        factory.setContextPath("/SpringHiberStarter");
         factory.setSessionTimeout(10, TimeUnit.MINUTES);
         return factory;
     }
