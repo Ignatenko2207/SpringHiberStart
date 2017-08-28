@@ -24,6 +24,10 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
+	/**
+     * @param user
+     * @return
+     */
 	@PostMapping(value = "")
 	public ResponseEntity<User> createUser(@RequestBody User user){
 		User userDB = userService.getUser(user.getEmail(), user.getPassword());
@@ -35,6 +39,10 @@ public class UserController {
 		}
 	}
 	
+	/**
+     * @param user
+     * @return
+     */
 	@PutMapping(value = "")
 	public ResponseEntity<User> updateUser(@RequestBody User user){
 		User userDB = userService.getUser(user.getEmail(), user.getPassword());
@@ -45,6 +53,11 @@ public class UserController {
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 	}
 	
+	/**
+     * @param email
+     * @param password
+     * @return
+     */
 	@GetMapping(value = "")
 	public ResponseEntity<User> getUser(@RequestParam String email, @RequestParam String password){
 		User user = userService.getUser(email, password);
@@ -56,6 +69,12 @@ public class UserController {
 		}
 	}
 	
+
+	/**
+     * @param email
+     * @param password
+     * @return
+     */
 	@DeleteMapping(value = "")
 	public ResponseEntity deleteUser(@RequestParam String email, @RequestParam String password){
 		User userDB = userService.getUser(email, password);
